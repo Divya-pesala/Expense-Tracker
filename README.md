@@ -1,2 +1,1 @@
-# Expense-Tracker
-A simple Flask Based Expense-tracker project
+"#Expense Tracker Project"  
