@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>All Expenses</h2>
+    {% if expenses %}
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>ID</th>
+            <th>Category</th>
+            <th>Amount</th>
+            <th>Date</th>
+        </tr>
+        {% for expense in expenses %}
+        <tr>
+            <td>{{ expense.ID }}</td>
+            <td>{{ expense.Category }}</td>
+            <td>{{ expense.Amount }}</td>
+            <td>{{ expense.Date }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>No expenses found.</p>
+    {% endif %}
+{% endblock %}

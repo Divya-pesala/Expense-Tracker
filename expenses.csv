@@ -1,25 +1,5 @@
-from flask import Flask, render_template
-import csv
-
-app = Flask(__name__)
-
-@app.route('/')
-def home():
-    return "Hello Divya, Expense Tracker is running in Flask!"
-
-@app.route('/expenses')
-def view_expenses():
-    expenses = []
-    try:
-        with open('expenses.csv', 'r') as file:
-            reader = csv.DictReader(file)
-            for row in reader:
-                expenses.append(row)
-    except FileNotFoundError:
-        expenses = []
-
-    return render_template("expenses.html", expenses=expenses)
-
-if __name__ == '__main__':
-    app.run(debug=True)
-
+ID,Category,Amount,Date
+1,Food,200,2025-08-24
+2,Travel,500,2025-08-23
+3,Shopping,1000,2025-08-20
+4,food,800,2004-08-15
